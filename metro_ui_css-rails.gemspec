@@ -7,8 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = MetroUiCss::Rails::VERSION
   spec.authors       = ['Kazuya Takeshima']
   spec.email         = ['mail@mitukiii.jp']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Metro UI CSS packaged for Rails asset pipeline}
   spec.homepage      = ''
   spec.license       = 'MIT'
 

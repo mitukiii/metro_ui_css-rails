@@ -1,26 +1,33 @@
 # Metro UI CSS Rails
 
-TODO: Write a gem description
+Metro UI CSS packaged for Rails asset pipeline
 
 ## Installation
 
-Add this line to your application's Gemfile:
+In your Gemfile, add:
 
 ```ruby
 gem 'metro_ui_css-rails'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install metro_ui_css-rails
-
 ## Usage
 
-TODO: Write usage instructions here
+To require all Metro UI CSS modules, add the following to your application.js:
+
+
+```javascript
+//= require jquery
+//= require jquery-ui/widget
+//= require metro
+```
+
+Also add the Metro UI CSS to your application.css:
+
+```stylesheet
+/*
+ *= require metro
+ */
+```
 
 ## Contributing
 
