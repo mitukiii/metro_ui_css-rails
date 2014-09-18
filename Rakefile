@@ -9,7 +9,7 @@ task :clean do
   rm_rf 'vendor'
 end
 
-desc 'Generate JavaScript assets'
+desc 'Generate javascripts'
 task javascripts: :submodule do
   Rake.rake_output_message 'Generating javascripts'
 
@@ -35,7 +35,7 @@ task javascripts: :submodule do
   end
 end
 
-desc 'Generate CSS assets'
+desc 'Generate stylesheets'
 task stylesheets: :submodule do
   Rake.rake_output_message 'Generating stylesheets'
 
@@ -63,9 +63,9 @@ task stylesheets: :submodule do
   end
 end
 
-desc 'Generate Font assets'
+desc 'Generate fonts'
 task fonts: :submodule do
-  Rake.rake_output_message 'Generating stylesheets'
+  Rake.rake_output_message 'Generating fonts'
 
   font_dir = 'vendor/assets/fonts'
   target_dir = "#{font_dir}/metro"
