@@ -1,6 +1,8 @@
 # Metro UI CSS Rails
 
-Metro UI CSS packaged for Rails asset pipeline
+[Metro UI CSS][metro_ui_css] packaged for Rails asset pipeline
+
+[metro_ui_css]: http://metroui.org.ua/
 
 ## Installation
 
