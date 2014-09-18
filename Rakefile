@@ -58,7 +58,24 @@ task stylesheets: :submodule do
   end
 end
 
+desc 'Generate Font assets'
+task fonts: :submodule do
+  Rake.rake_output_message 'Generating stylesheets'
+
+  font_dir = 'vendor/assets/fonts'
+  target_dir = "#{font_dir}/metro"
+  mkdir_p target_dir
+
+  paths = Dir.glob('Metro-UI-CSS/fonts/*')
+
+  paths.each do |path|
+    basename = File.basename(path)
+    target_path = File.join(target_dir, basename)
+    cp path, target_path
+  end
+end
+
 desc 'Generate assets'
-task assets: [:clean, :javascripts, :stylesheets]
+task assets: [:clean, :javascripts, :stylesheets, :fonts]
 
 task default: :assets
