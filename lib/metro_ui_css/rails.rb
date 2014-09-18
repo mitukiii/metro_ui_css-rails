@@ -1,4 +1,1 @@
-module MetroUiCss
-  module Rails
-  end
-end
+require 'metro_ui_css/rails/engine'
