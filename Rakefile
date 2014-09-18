@@ -1,4 +1,5 @@
 require 'bundler/gem_tasks'
+require 'json'
 
 task :submodule do
   sh 'git submodule update --init' unless File.exist?('Metro-UI-CSS/README.md')
@@ -79,7 +80,21 @@ task fonts: :submodule do
   end
 end
 
+desc 'Update MetroUiCss::Rails::METRO_UI_CSS_VERSION'
+task version: :submodule do
+  Rake.rake_output_message 'Updating MetroUiCss::Rails::METRO_UI_CSS_VERSION'
+
+  version = JSON.parse(IO.read('./Metro-UI-CSS/bower.json'))['version']
+
+  version_path = 'lib//metro_ui_css/rails/version.rb'
+  source = IO.read(version_path)
+  source = source.sub(/METRO_UI_CSS_VERSION = '[^']*'/, "METRO_UI_CSS_VERSION = '#{version}'")
+  File.open(version_path, 'w') do |out|
+    out.write(source)
+  end
+end
+
 desc 'Generate assets'
-task assets: [:clean, :javascripts, :stylesheets, :fonts]
+task assets: [:clean, :javascripts, :stylesheets, :fonts, :version]
 
 task default: :assets
