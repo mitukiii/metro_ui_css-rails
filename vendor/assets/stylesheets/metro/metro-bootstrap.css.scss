@@ -8417,7 +8417,7 @@ a {
 }
 @font-face {
   font-family: 'metroSysIcons';
-  src: assets-path('metroSysIcons.woff') format('woff'), assets-path('metroSysIcons.ttf') format('truetype'), assets-path('metroSysIcons.svg#metroSysIcons') format('svg');
+  src: url(font-path('metro/metroSysIcons.woff')) format('woff'), url(font-path('metro/metroSysIcons.ttf')) format('truetype'), url(font-path('metro/metroSysIcons.svg#metroSysIcons')) format('svg');
   font-weight: normal;
   font-style: normal;
 }
