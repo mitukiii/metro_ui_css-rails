@@ -46,8 +46,12 @@ task stylesheets: :submodule do
 
   paths.each do |path|
     basename = File.basename(path)
-    target_path = File.join(target_dir, basename)
-    cp path, target_path
+    target_path = File.join(target_dir, "#{basename}.scss")
+    source = IO.read(path)
+    source = source.gsub(/url\('\.\.\/fonts\/(.+?)'\)/, "url(font-path('metro/\\1'))")
+    File.open(target_path, 'w') do |file|
+      file.print source
+    end
   end
 
   File.open("#{stylesheet_dir}/metro.css", 'w') do |file|
